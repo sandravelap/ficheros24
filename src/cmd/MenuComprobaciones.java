@@ -2,6 +2,7 @@ package cmd;
 
 import servicio.ServicioComprobarRuta;
 
+import java.nio.file.Path;
 import java.util.Scanner;
 
 import static libs.checkFiles.pedirRuta;
@@ -45,9 +46,9 @@ public class MenuComprobaciones {
     private void comprobarExistencia() {
         //como necesitamos más datos nos quedamos en la capa menú
         //utilizamos nuestra librería para pedir una ruta con la sintaxis correcta
-        String ruta = pedirRuta("Introduce la ruta a comprobar: ");
+        Path ruta = pedirRuta("Introduce la ruta a comprobar: ");
         //llamamos al servicio que comprueba con toda la información neesaria
-        this.servicioComprobarRuta.existe(ruta);
+        this.servicioComprobarRuta.existeRuta(ruta);
     }
 
 }
